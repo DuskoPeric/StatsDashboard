@@ -1,0 +1,31 @@
+//colors
+//$menu-bg-color: #312B38;
+$menu-bg-color:#14161c;
+$content-bg-color: #1f232d;
+$box-bg-color:#14161c;
+// $content-bg-color: #161616;
+// $box-bg-color:#232121;
+$palete-one-color:#ee4540;
+$palete-two-color:#C72C41;
+$palete-three-color:#801336;
+$palete-four-color:#510A32;
+$palete-five-color:#2D142C;
+
+//fonts
+$base-font: "Work Sans", sans-serif;
+
+
+//media screen
+$tinymobile: "only screen and (max-width : 320px)";
+$smallmobile: "only screen and (max-width : 350px)";
+$smalltablet: "only screen and (max-width : 600px)";
+$tablet: "only screen and (max-width : 768px)";
+$ipadpro: "only screen and (max-width : 1024px)";
+
+//mixins
+@mixin transition($property,$time,$delay) {
+    -webkit-transition: $property $time $delay ease-out;
+    -moz-transition: $property $time $delay ease-out;
+    -o-transition: $property $time $delay ease-out;
+    transition: $property $time $delay ease-out;
+  }

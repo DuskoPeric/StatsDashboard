@@ -1,0 +1,87 @@
+@import "../../../style/variables.scss";
+
+.select-box {
+  height: 30px;
+  background: #ee454040;
+  position: relative;
+  border: solid 1px $palete-one-color;
+  width: 170px;
+  margin: auto;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  font-size: 13px;
+  position: relative;
+  cursor: pointer;
+  &.arrow-up::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 10px;
+    background: $palete-one-color;
+    right: 9px;
+    top: 10px;
+    transform: rotate(45deg);
+    @include transition(all, 0.3s, 0s);
+  }
+  &.arrow-up::before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 10px;
+    background: $palete-one-color;
+    right: 15px;
+    top: 10px;
+    transform: rotate(-45deg);
+    @include transition(all, 0.3s, 0s);
+  }
+  &.arrow-down::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 10px;
+    background: $palete-one-color;
+    right: 9px;
+    top: 10px;
+    transform: rotate(-45deg);
+    @include transition(all, 0.3s, 0s);
+  }
+  &.arrow-down::before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 10px;
+    background: $palete-one-color;
+    right: 15px;
+    top: 10px;
+    transform: rotate(45deg);
+    @include transition(all, 0.3s, 0s);
+  }
+  p {
+    margin: 0px;
+    color: white;
+    font-weight: 600;
+  }
+  .options-box {
+    z-index: 9;
+    position: absolute;
+    top: 30px;
+    left: -1px;
+    background: white;
+    width: 170px;
+
+    div {
+      padding: 10px;
+      border-bottom: solid 1px #8080807d;
+      cursor: pointer;
+      color: $content-bg-color;
+      font-weight: 650;
+      &:hover {
+        color: $palete-one-color;
+      }
+    }
+  }
+}

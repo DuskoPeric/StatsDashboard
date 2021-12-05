@@ -4,6 +4,12 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import {makeServer} from'./server';
+
+if (process.env.NODE_ENV === "development") {
+  makeServer();
+}
+
 ReactDOM.render(
   <React.StrictMode>
     <App />

@@ -1,0 +1,106 @@
+@import "../../../../style/variables.scss";
+.action-form {
+  opacity: 0;
+  height: 0px;
+  @include transition(opacity, 0s, 0s);
+  margin: auto;
+  width: 172px;
+  &.open {
+    opacity: 1;
+    height: auto;
+    @include transition(opacity, 0.1s, 0.2s);
+  }
+
+  .action-title {
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 200;
+  }
+  .input-block {
+    .input-holder {
+      width: 170px;
+      margin: auto;
+      display: flex;
+      border-bottom: solid 1px $content-bg-color;
+      label {
+        width: 50px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: $palete-two-color;
+        color: white;
+        font-size: 14px;
+        font-weight: 800;
+      }
+      input {
+        width: 120px;
+        height: 30px;
+        border: none;
+        box-sizing: border-box;
+        font-size: 16px;
+        font-weight: 700;
+        padding-left: 10px;
+        color: $content-bg-color;
+        &.split {
+          width: 50px;
+        }
+      }
+      span {
+        width: 20px;
+        height: 30px;
+        background: #e7e7e7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 800;
+      }
+      b {
+        position: relative;
+        top: -2px;
+        &.larger {
+          font-size: 17px;
+          top: -1px;
+        }
+      }
+    }
+  }
+  .form-btns {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    button {
+      width: 80px;
+      height: 30px;
+      border: none;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      cursor: pointer;
+      &.add {
+        background: $palete-two-color;
+        color: white;
+        @include transition(background, 0.3s, 0s);
+        &:hover {
+          background: $palete-one-color;
+          @include transition(background, 0.3s, 0s);
+        }
+      }
+      &.cancel {
+        color: $palete-two-color;
+        &:hover {
+          color: $palete-one-color;
+        }
+      }
+    }
+  }
+  .formNotify {
+    margin-top: 10px;
+    text-align: center;
+    background: #801336;
+    color: white;
+    padding: 10px;
+    font-size: 13px;
+  }
+}

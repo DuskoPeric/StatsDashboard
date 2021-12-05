@@ -1,0 +1,202 @@
+@import "../../../style/variables.scss";
+.show-container {
+  overflow-y: auto;
+  background: $content-bg-color;
+  width: calc(100% - 82px);
+  @include transition(width, 0.3s, 0s);
+  @media #{$tablet} {
+    width: 100%;
+  }
+  &.wide {
+    width: calc(100% - 230px);
+    @include transition(width, 0.3s, 0s);
+    @media #{$tablet} {
+      width: 100%;
+    }
+  }
+  .chart-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    box-sizing: border-box;
+    .chart-box {
+      overflow: hidden;
+      height: 280px;
+      border-radius: 5px;
+      background: $box-bg-color;
+      padding: 20px;
+      box-sizing: border-box;
+      font-family: "Ubuntu", sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      min-height: 250px;
+      h2 {
+        font-family: "Raleway", sans-serif;
+        margin: 0px;
+        font-size: 16px;
+        margin-bottom: 20px;
+        color: #ee4540;
+        font-weight: 700;
+        text-transform: uppercase;
+        span {
+          position: relative;
+          top: -2px;
+        }
+      }
+      &.w-long {
+        width: 48%;
+        @media #{$ipadpro} {
+          width: 49%;
+        }
+        @media #{$tablet} {
+          width: 100%;
+        }
+      }
+      &.w-longer {
+        width: 49%;
+        @media #{$tablet} {
+          width: 100%;
+        }
+      }
+      &.w-short {
+        width: 24%;
+        @media #{$ipadpro} {
+          width: 49%;
+        }
+        @media #{$tablet} {
+          width: 100%;
+        }
+      }
+      &.m-r {
+        margin-right: 2%;
+        @media #{$ipadpro} {
+          margin-right: 0%;
+        }
+      }
+      &.m-r-s {
+        @media #{$ipadpro} {
+          margin-right: 2%;
+        }
+        @media #{$tablet} {
+          margin-right: 0%;
+        }
+      }
+      &.flex {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+  .select-container {
+    padding: 20px 20px 0 20px;
+    display: flex;
+    .btn {
+      display: flex;
+      align-items: center;
+      background: $box-bg-color;
+      border: none;
+      margin-right: 20px;
+      text-transform: uppercase;
+      font-weight: 800;
+      padding-right: 10px;
+      border-bottom: solid black;
+      cursor: pointer;
+      color: $palete-one-color;
+      @include transition(all, 0.3s, 0s);
+      @media #{$smallmobile} {
+        font-size: 12px;
+      }
+      &.active,
+      &:hover {
+        background: $palete-one-color;
+        color: #14161c;
+        border-bottom: solid $palete-three-color;
+        .user-icon {
+          background: #c72c41;
+          border-right: solid 2px #8d2926;
+          .user-head {
+            @include transition(border, 0.3s, 0s);
+            background: $box-bg-color;
+            border: solid 2px $palete-two-color;
+          }
+          .user-body {
+            background: $box-bg-color;
+          }
+        }
+      }
+      .user-icon {
+        width: 40px;
+        height: 40px;
+        background: #0b0b0c;
+        position: relative;
+        margin-right: 10px;
+        border-right: solid 2px black;
+        .user-head {
+          width: 10px;
+          height: 10px;
+          background: $palete-one-color;
+          border: solid 2px #0b0b0c;
+          border-radius: 50%;
+          position: absolute;
+          left: 13px;
+          top: 7px;
+        }
+        .user-body {
+          width: 15px;
+          height: 12px;
+          background: $palete-one-color;
+          border-radius: 15px 15px 2px 2px;
+          position: absolute;
+          left: 12.4px;
+          top: 18px;
+        }
+      }
+    }
+  }
+  .info-text {
+    color: #ee4540;
+    padding-left: 20px;
+    padding-top: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .loader {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin-left: 20px;
+    div {
+      display: inline-block;
+      position: absolute;
+      left: 8px;
+      width: 16px;
+      background: $palete-one-color;
+      animation: loader 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+      &:nth-child(1) {
+        left: 8px;
+        animation-delay: -0.24s;
+      }
+      &:nth-child(2) {
+        left: 32px;
+        animation-delay: -0.12s;
+      }
+      &:nth-child(3) {
+        left: 56px;
+        animation-delay: 0;
+      }
+    }
+  }
+}
+@keyframes loader {
+  0% {
+    top: 8px;
+    height: 64px;
+  }
+  50%,
+  100% {
+    top: 24px;
+    height: 32px;
+  }
+}
